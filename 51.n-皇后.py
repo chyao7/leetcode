@@ -8,19 +8,19 @@
 class Solution:
     def solveNQueens(self, n: int):
         self.a = [0]*n
-        res = []
-        res.append(self.dfs(n,0))
-        print(res)
+        self.res = []
+        # print(self.dfs(n,0))
+        self.res.append(self.dfs(n,0))
+        print(self.res)
         return 
 
     def dfs(self,n,row):
         if row == n:
-            print(self.a)
-            return self.a
+            return self.a[:]
         for i in range(n):
             if self.check(row, i):
                 self.a[row] = i
-                print (self.a, i, self.a[i])
+                # print (self.a, i, self.a[i])
                 self.dfs(n,row+1)
                 self.a[row] = 0
 
