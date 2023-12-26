@@ -10,12 +10,13 @@ class Solution:
         self.a = [0]*n
         self.res = []
         # print(self.dfs(n,0))
-        self.res.append(self.dfs(n,0))
-        print(self.res)
-        return 
+        self.dfs(n,0)   
+        return self.res
 
     def dfs(self,n,row):
         if row == n:
+            self.res.append(self.a)
+
             return self.a[:]
         for i in range(n):
             if self.check(row, i):
